@@ -53,11 +53,11 @@ export class MyComponent {
     this.controller.update();
     requestAnimationFrame(() => this.update());
   }
-  render() {
-    return <JoyConIcon active={this.initialized} />;
-  }
   private triggerEvent(keyCode: number) {
     const keyboardOptions: any = { bubbles: true, cancelable: true, keyCode };
     document.dispatchEvent(new KeyboardEvent("keydown", keyboardOptions));
+  }
+  render() {
+    return <JoyConIcon active={this.initialized} />;
   }
 }
