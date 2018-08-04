@@ -30,8 +30,8 @@ declare global {
 
   namespace StencilComponents {
     interface JoyCon {
-      'leftTriggerButton': string;
-      'rightTriggerButton': string;
+      'left': string;
+      'right': string;
       'side': "L" | "R";
     }
   }
@@ -55,8 +55,8 @@ declare global {
   }
   namespace JSXElements {
     export interface JoyConAttributes extends HTMLAttributes {
-      'leftTriggerButton'?: string;
-      'rightTriggerButton'?: string;
+      'left'?: string;
+      'right'?: string;
       'side'?: "L" | "R";
     }
   }

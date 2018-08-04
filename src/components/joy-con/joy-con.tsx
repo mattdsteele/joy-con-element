@@ -1,5 +1,6 @@
 import { Component, Prop, Watch, State } from "@stencil/core";
 import Unswitch from "unswitch";
+import { JoyConIcon } from "./JoyConIcon";
 
 @Component({
   tag: "joy-con",
@@ -9,13 +10,14 @@ import Unswitch from "unswitch";
 export class MyComponent {
   @State() private initialized = false;
   @Prop() side: "L" | "R";
-  @Prop() leftTriggerButton: string;
-  @Prop() rightTriggerButton: string;
+  @Prop() left: string;
+  @Prop() right: string;
   controller: any;
-  @Watch("leftTriggerButton")
+  @Watch("left")
   onLeftTrigger() {
     this.checkAndDoInit();
   }
+  @Watch("right")
   onRightTrigger() {
     this.checkAndDoInit();
   }
@@ -24,7 +26,7 @@ export class MyComponent {
   }
   private checkAndDoInit() {
     if (!this.initialized) {
-      if (this.leftTriggerButton && this.rightTriggerButton && this.side) {
+      if (this.left && this.right && this.side) {
         this.init();
       }
     }
@@ -34,12 +36,12 @@ export class MyComponent {
     const unswitchSettings = {
       side: this.side.toUpperCase()
     };
-    unswitchSettings[this.leftTriggerButton] = pressed => {
+    unswitchSettings[this.left] = pressed => {
       if (pressed) {
         this.triggerEvent(37);
       }
     };
-    unswitchSettings[this.rightTriggerButton] = pressed => {
+    unswitchSettings[this.right] = pressed => {
       if (pressed) {
         this.triggerEvent(39);
       }
@@ -52,7 +54,7 @@ export class MyComponent {
     requestAnimationFrame(() => this.update());
   }
   render() {
-    return <span>Joy Con!</span>;
+    return <JoyConIcon active={this.initialized} />;
   }
   private triggerEvent(keyCode: number) {
     const keyboardOptions: any = { bubbles: true, cancelable: true, keyCode };

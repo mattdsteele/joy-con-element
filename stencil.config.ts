@@ -5,6 +5,7 @@ export const config: Config = {
   outputTargets: [
     {
       type: "dist"
-    }
+    },
+    { type: "www" }
   ]
 };
