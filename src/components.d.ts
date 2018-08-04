@@ -29,33 +29,35 @@ declare global {
 declare global {
 
   namespace StencilComponents {
-    interface MyComponent {
-      'first': string;
-      'last': string;
+    interface JoyCon {
+      'leftTriggerButton': string;
+      'rightTriggerButton': string;
+      'side': "L" | "R";
     }
   }
 
-  interface HTMLMyComponentElement extends StencilComponents.MyComponent, HTMLStencilElement {}
+  interface HTMLJoyConElement extends StencilComponents.JoyCon, HTMLStencilElement {}
 
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  var HTMLJoyConElement: {
+    prototype: HTMLJoyConElement;
+    new (): HTMLJoyConElement;
   };
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'joy-con': HTMLJoyConElement;
   }
   interface ElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'joy-con': HTMLJoyConElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      'my-component': JSXElements.MyComponentAttributes;
+      'joy-con': JSXElements.JoyConAttributes;
     }
   }
   namespace JSXElements {
-    export interface MyComponentAttributes extends HTMLAttributes {
-      'first'?: string;
-      'last'?: string;
+    export interface JoyConAttributes extends HTMLAttributes {
+      'leftTriggerButton'?: string;
+      'rightTriggerButton'?: string;
+      'side'?: "L" | "R";
     }
   }
 }
