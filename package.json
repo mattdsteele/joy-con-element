@@ -23,14 +23,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ionic-team/stencil-component-starter.git"
+    "url": "git@github.com:mattdsteele/joy-con-element.git"
   },
-  "author": "Ionic Team",
+  "author": "mattdsteele",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ionic-team/stencil"
+    "url": "https://github.com/mattdsteele/joy-con-element"
   },
-  "homepage": "https://github.com/ionic-team/stencil",
+  "homepage": "https://github.com/mattdsteele/joy-con-element",
   "jest": {
     "transform": {
       "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/@stencil/core/testing/jest.preprocessor.js"
