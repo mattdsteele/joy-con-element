@@ -18,6 +18,15 @@ More installation options (Webpack, etc) described here: https://stenciljs.com/d
 
 The component will not activate until `side`, `left`, and `right` have all been defined.
 
+Not Ready:
+
+![screen shot 2018-08-06 at 19 19 03](https://user-images.githubusercontent.com/389077/43747267-58a543be-99ae-11e8-8e93-77c6b0b9def2.png)
+
+Ready:
+
+![screen shot 2018-08-06 at 19 19 26](https://user-images.githubusercontent.com/389077/43747270-5ad05a34-99ae-11e8-92b4-693b7f659b53.png)
+
+
 ## Props
 
 All props are also accessible as attributes.
