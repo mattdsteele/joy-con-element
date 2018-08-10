@@ -6,6 +6,12 @@ A Custom Element that maps a Nintendo Switch Joy-Con controller to keyboard even
 
 Based on @vaneenige's fantastic [unswitch](https://github.com/vaneenige/unswitch) library
 
+## Demo
+
+Check out the demo on [jsbin](http://jsbin.com/qapoven/edit?html,js,output)!
+
+You'll want to have a Joy-Con paired to your PC already.
+
 ## Install
 
 As a script tag: `<script src="https://unpkg.com/joy-con-element/dist/joy-con.js"></script>`
