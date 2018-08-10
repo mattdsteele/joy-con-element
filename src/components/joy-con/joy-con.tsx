@@ -22,12 +22,8 @@ export class JoyCon {
   @Event() button: EventEmitter;
   @Event() axes: EventEmitter;
   controller: any;
-  @Watch("left")
-  onLeftTrigger() {
-    this.checkAndDoInit();
-  }
-  @Watch("right")
-  onRightTrigger() {
+  @Watch("side")
+  onSideUpdate() {
     this.checkAndDoInit();
   }
   componentDidLoad() {

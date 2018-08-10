@@ -9,9 +9,10 @@
 </head>
 <body>
 
-  <joy-con side="r" right="a"></joy-con>
+  <joy-con right="a"></joy-con>
   <script>
   const joyCon = document.querySelector('joy-con');
+  joyCon.side = 'r';
   joyCon.addEventListener('button', ({ detail }) => {
     console.log(detail);
   });

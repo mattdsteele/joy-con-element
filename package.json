@@ -10,7 +10,7 @@
     "dist/"
   ],
   "scripts": {
-    "prepublish": "stencil build",
+    "prepublishOnly": "stencil build",
     "build": "stencil build",
     "start": "stencil build --dev --watch --serve",
     "test": "jest",
