@@ -9,7 +9,13 @@
 </head>
 <body>
 
-  <joy-con side="R" right="a"></joy-con>
+  <joy-con side="r" right="a"></joy-con>
+  <script>
+  const joyCon = document.querySelector('joy-con');
+  joyCon.addEventListener('button', ({ detail }) => {
+    console.log(detail);
+  });
+  </script>
 
 </body>
 </html>

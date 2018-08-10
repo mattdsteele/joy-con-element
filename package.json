@@ -15,9 +15,11 @@
     "test": "jest",
     "test.watch": "jest --watch"
   },
-  "dependencies": {},
+  "dependencies": {
+    "unswitch": "^1.4.0"
+  },
   "devDependencies": {
-    "@stencil/core": "^0.11.0",
+    "@stencil/core": "^0.11.3",
     "@types/jest": "^23.3.1",
     "jest": "^23.4.2"
   },

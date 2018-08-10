@@ -16,7 +16,7 @@ More installation options (Webpack, etc) described here: https://stenciljs.com/d
 
 `<joy-con side="r" left="y" right="a"></joy-con>`
 
-The component will not activate until `side`, `left`, and `right` have all been defined.
+The component will not activate until `side` has been defined.
 
 Not Ready:
 
@@ -25,7 +25,6 @@ Not Ready:
 Ready:
 
 ![screen shot 2018-08-06 at 19 19 26](https://user-images.githubusercontent.com/389077/43747270-5ad05a34-99ae-11e8-92b4-693b7f659b53.png)
-
 
 ## Props
 
@@ -44,3 +43,16 @@ Which Joy-Con button triggers a Left keyboard event
 Which Joy-Con button triggers a Right keyboard event
 
 The full set of `JoyConButton` options is described in [unswitch](https://github.com/vaneenige/unswitch#usage)
+
+## Events
+
+#### `button`
+
+Emitted when a button is pressed (or released). Contains metadata in the `detail` section of the CustomEvent:
+
+```typescript
+interface ButtonEventDetail {
+  button: string; // which Joy-Con button was pressed
+  pressed: boolean; // true if the button was pressed, false if the button was released
+}
+```
