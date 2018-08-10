@@ -50,10 +50,10 @@ export class JoyCon {
     this.axes.emit({ value });
   };
   onButtonPress = (button: string, pressed: boolean) => {
-    if (this.left && button === this.left) {
+    if (this.left && pressed && button === this.left) {
       this.triggerEvent(37);
     }
-    if (this.right && button === this.right) {
+    if (this.right && pressed && this.right === button) {
       this.triggerEvent(39);
     }
     this.button.emit({ button, pressed });
