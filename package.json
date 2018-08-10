@@ -1,6 +1,6 @@
 {
   "name": "joy-con-element",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Stencil Component Starter",
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
