@@ -2,32 +2,34 @@ import {
   Component,
   Prop,
   Watch,
+  h,
   State,
   Event,
   EventEmitter
-} from "@stencil/core";
-import Unswitch, { UnswitchOptions } from "unswitch";
-import { JoyConIcon } from "./JoyConIcon";
+} from '@stencil/core';
+import Unswitch, { UnswitchOptions } from 'unswitch';
+import { JoyConIcon } from './JoyConIcon';
 
 @Component({
-  tag: "joy-con",
-  styleUrl: "joy-con.css",
+  tag: 'joy-con',
+  styleUrl: 'joy-con.css',
   shadow: true
 })
 export class JoyCon {
   @State() private initialized = false;
-  @Prop() side: "L" | "R";
+  @Prop() side: 'L' | 'R';
   @Prop() left: string;
   @Prop() right: string;
   @Event() button: EventEmitter;
   @Event() axes: EventEmitter;
   controller: any;
-  @Watch("side")
+  @Watch('side')
   onSideUpdate() {
     this.checkAndDoInit();
   }
   componentDidLoad() {
     this.checkAndDoInit();
+    console.log('loaded');
   }
   private checkAndDoInit() {
     if (!this.initialized) {
@@ -64,7 +66,7 @@ export class JoyCon {
   }
   private triggerEvent(keyCode: number) {
     const keyboardOptions: any = { bubbles: true, cancelable: true, keyCode };
-    document.dispatchEvent(new KeyboardEvent("keydown", keyboardOptions));
+    document.dispatchEvent(new KeyboardEvent('keydown', keyboardOptions));
   }
   render() {
     return <JoyConIcon active={this.initialized} />;

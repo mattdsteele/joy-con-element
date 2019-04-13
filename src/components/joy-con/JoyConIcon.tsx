@@ -1,5 +1,6 @@
+import { h } from '@stencil/core';
 export const JoyConIcon = ({ active }) => {
-  const fillColor = active ? "green" : "#e60012";
+  const fillColor = active ? 'green' : '#e60012';
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="39.077">
       <path

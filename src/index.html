@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
-  <script src="/build/joy-con.js"></script>
-
-</head>
-<body>
-
-  <joy-con right="a"></joy-con>
-  <script>
-  const joyCon = document.querySelector('joy-con');
-  joyCon.side = 'r';
-  joyCon.addEventListener('button', ({ detail }) => {
-    console.log(detail);
-  });
-  </script>
-
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+    <script type="module" src="/dist/app.mjs.js"></script>
+    <script nomodule src="/dist/app.js"></script>
+  </head>
+  <body>
+    <p>Joy-con!</p>
+    <joy-con right="a" side="r"></joy-con>
+    <script>
+      const joyCon = document.querySelector('joy-con');
+      joyCon.addEventListener('button', ({ detail }) => {
+        console.log(detail);
+      });
+    </script>
+  </body>
 </html>

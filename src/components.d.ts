@@ -5,35 +5,45 @@
  */
 
 
-import '@stencil/core';
-
-
+import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
+import { JSX } from '@stencil/core';
 
 
 export namespace Components {
-
   interface JoyCon {
     'left': string;
     'right': string;
-    'side': "L" | "R";
+    'side': 'L' | 'R';
   }
-  interface JoyConAttributes extends StencilHTMLAttributes {
+}
+
+declare namespace LocalJSX {
+  interface JoyCon extends JSXBase.HTMLAttributes {
     'left'?: string;
-    'onAxes'?: (event: CustomEvent) => void;
-    'onButton'?: (event: CustomEvent) => void;
+    'onAxes'?: (event: CustomEvent<any>) => void;
+    'onButton'?: (event: CustomEvent<any>) => void;
     'right'?: string;
-    'side'?: "L" | "R";
+    'side'?: 'L' | 'R';
+  }
+
+  interface ElementInterfaces {
+    'JoyCon': Components.JoyCon;
+  }
+
+  interface IntrinsicElements {
+    'JoyCon': LocalJSX.JoyCon;
+  }
+}
+export { LocalJSX as JSX };
+
+declare module "@stencil/core" {
+  export namespace JSX {
+    interface ElementInterfaces extends LocalJSX.ElementInterfaces {}
+    interface IntrinsicElements extends LocalJSX.IntrinsicElements {}
   }
 }
 
 declare global {
-  interface StencilElementInterfaces {
-    'JoyCon': Components.JoyCon;
-  }
-
-  interface StencilIntrinsicElements {
-    'joy-con': Components.JoyConAttributes;
-  }
 
 
   interface HTMLJoyConElement extends Components.JoyCon, HTMLStencilElement {}
@@ -41,7 +51,6 @@ declare global {
     prototype: HTMLJoyConElement;
     new (): HTMLJoyConElement;
   };
-
   interface HTMLElementTagNameMap {
     'joy-con': HTMLJoyConElement
   }
@@ -49,14 +58,5 @@ declare global {
   interface ElementTagNameMap {
     'joy-con': HTMLJoyConElement;
   }
-
-
-  export namespace JSX {
-    export interface Element {}
-    export interface IntrinsicElements extends StencilIntrinsicElements {
-      [tagName: string]: any;
-    }
-  }
-  export interface HTMLAttributes extends StencilHTMLAttributes {}
-
 }
+

@@ -2,7 +2,7 @@
   "name": "joy-con-element",
   "version": "1.0.2",
   "description": "Stencil Component Starter",
-  "module": "dist/esm/index.js",
+  "module": "dist/index.mjs",
   "main": "dist/index.js",
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
@@ -12,7 +12,7 @@
   "scripts": {
     "prepublishOnly": "stencil build",
     "build": "stencil build",
-    "start": "stencil build --dev --watch --serve",
+    "start": "stencil build --dev --watch --serve --debug",
     "test": "jest",
     "test.watch": "jest --watch"
   },
@@ -20,7 +20,7 @@
     "unswitch": "^1.4.0"
   },
   "devDependencies": {
-    "@stencil/core": "^0.18.1",
+    "@stencil/core": "1.0.0-alpha.8",
     "@types/jest": "^23.3.1",
     "jest": "^23.4.2",
     "workbox-build": "3.4.1"

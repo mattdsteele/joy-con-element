@@ -1,11 +1,5 @@
-import { Config } from "@stencil/core";
+import { Config } from '@stencil/core';
 
 export const config: Config = {
-  namespace: "joy-con",
-  outputTargets: [
-    {
-      type: "dist"
-    },
-    { type: "www" }
-  ]
+  outputTargets: [{ type: 'dist-module' }, { type: 'dist' }]
 };
