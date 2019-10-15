@@ -71,8 +71,6 @@ export class JoyCon {
   render() {
     return (
       <div>
-        <p>Inline</p>
-        <p>Embedded</p>
         <JoyConIcon active={this.initialized} />
       </div>
     );

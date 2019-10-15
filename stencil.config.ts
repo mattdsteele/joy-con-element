@@ -1,6 +1,18 @@
 import { Config } from '@stencil/core';
 
 export const config: Config = {
-  namespace: 'joycon',
-  outputTargets: [{ type: 'dist' }]
+  namespace: 'joy-con-element',
+  outputTargets: [
+    {
+      type: 'dist',
+      esmLoaderPath: '../loader'
+    },
+    {
+      type: 'docs-readme'
+    },
+    {
+      type: 'www',
+      serviceWorker: null // disable service workers
+    }
+  ]
 };
