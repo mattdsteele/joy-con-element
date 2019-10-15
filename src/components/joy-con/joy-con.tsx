@@ -69,6 +69,12 @@ export class JoyCon {
     document.dispatchEvent(new KeyboardEvent('keydown', keyboardOptions));
   }
   render() {
-    return <JoyConIcon active={this.initialized} />;
+    return (
+      <div>
+        <p>Inline</p>
+        <p>Embedded</p>
+        <JoyConIcon active={this.initialized} />
+      </div>
+    );
   }
 }
